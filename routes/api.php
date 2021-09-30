@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/{a}+{b}','CalculatorController@plus');
+Route::get('/{a}-{b}','CalculatorController@minus');
+Route::get('/{a}*{b}','CalculatorController@times');
+Route::get('/{a}:{b}','CalculatorController@divided');
+

@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
+Route::get('/about_api','AboutAPIController@index');
+Route::get('/card','CardController@card');
+Route::post('/card/answer','CardController@answer');
+Route::get('/time/{a}-{b}-{c}','TimeController@yestimestamp');
+Route::get('/time/','TimeController@notimestamp');
