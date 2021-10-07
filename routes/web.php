@@ -18,3 +18,5 @@ Route::get('/card','CardController@card');
 Route::post('/card/answer','CardController@answer');
 Route::get('/time/{a}-{b}-{c}','TimeController@yestimestamp');
 Route::get('/time/','TimeController@notimestamp');
+Route::get('/news','NewsController@index');
+Route::get('/news/categories','CategoriesController@index');

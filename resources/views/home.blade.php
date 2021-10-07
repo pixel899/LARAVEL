@@ -15,6 +15,7 @@
         <a class="nav-link" href="/card">Сервис транслитерации держателя карты</a>
         <a class="nav-link" href="/about_api">Описание Api калькулятора</a>
         <a class="nav-link " href="/time/">Вывод даты в LARAVEL</a>
+        <a class="nav-link " href="/news">Новостной сайт</a>
     </div>
 </p>
 </body>
