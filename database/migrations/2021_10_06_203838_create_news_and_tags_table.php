@@ -14,11 +14,7 @@ class CreateNewsAndTagsTable extends Migration
     public function up()
     {
         Schema::create('news_and_tags', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->integer('news_id')->unsigned();
-            $table->integer('tags_id')->unsigned();
-            $table->foreign('news_id')->references('id')->on('news');
-            $table->foreign('tags_id')->references('id')->on('tags');
+            $table->id();
         });
     }
 

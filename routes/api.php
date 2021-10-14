@@ -19,3 +19,23 @@ Route::get('/{a}-{b}','CalculatorController@minus');
 Route::get('/{a}*{b}','CalculatorController@times');
 Route::get('/{a}:{b}','CalculatorController@divided');
 
+Route::group(['prefix' => 'categories'], function () {
+
+    Route::get('', 'CategoriesController@index');
+    Route::post('', 'CategoriesController@store');
+    Route::get('{categories_id}', 'CategoriesController@show');
+    Route::put('{categories_id}', 'CategoriesController@update');
+    Route::delete('{categories_id}', 'CategoriesController@destroy');
+    Route::post('restore/{categories_id}', 'CategoriesController@restore');
+
+});
+Route::group(['prefix' => 'news'], function () {
+
+    Route::get('', 'NewsController@index');
+    Route::get('/{categories}', 'NewsController@filter');
+
+
+
+
+});
+
