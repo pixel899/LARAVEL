@@ -33,6 +33,8 @@ Route::group(['prefix' => 'news'], function () {
 
     Route::get('', 'NewsController@index');
     Route::get('/{categories}', 'NewsController@filter');
+    Route::post('', 'NewsController@store');
+
 
 
 

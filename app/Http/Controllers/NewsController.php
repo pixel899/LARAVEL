@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
-use App\Models\NewsANDTags;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -14,8 +13,16 @@ class NewsController extends Controller
     }
     public function filter($categories)
     {
-       return response()->json(News::where('category_id',$categories)->get());
+       return response()->json(News::findOrFail($categories)->where('category_id',$categories)->get());
     }
+    public function store(Request $request)
+    {
+        $categories = News::create($request->all());
+        $categories->save();
+        return response()->json($categories);
+    }
+
+
 
 
 
